@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="assets/css/index.css" />
+</head>
+<body>
+
+  <div class="header">
+    <h1>Mis Tareas</h1>
+    <p>Organiza tus días</p>
+  </div>
+
+  <div class="card">
+
+    <div class="counter-bar">
+      <span class="counter-label">Tareas pendientes</span>
+      <span class="counter-badge" id="contador">0</span>
+    </div>
+
+    <div class="input-row">
+      <input type="text" id="input-tarea" placeholder="Escribe una tarea..." maxlength="120" />
+      <button class="btn-add" id="btn-agregar">+</button>
+    </div>
+
+    <p class="error-msg" id="error-msg">La tarea no puede estar sin nada</p>
+
+    <ul id="lista-tareas"></ul>
+
+    <div class="empty-state" id="empty-state">
+      Sin tareas
+    </div>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
