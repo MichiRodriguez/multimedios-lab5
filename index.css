@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
+@font-face {
+  font-family: "Syne";
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/syne/v22/8vIS7w4qzmVxsWxjBZRjr0FKM_04uQ.woff2") format("woff2");
+  font-weight: 800;
+}
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: "Syne";
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/syne/v22/8vIS7w4qzmVxsWxjBZRjr0FKM_06uQ.woff2") format("woff2");
+  font-weight: 700;
 }
 
 :root {
@@ -20,7 +26,7 @@
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "Syne", sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
@@ -31,12 +37,13 @@ body {
 }
 
 .header {
-  text-align: center;
   margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 520px;
 }
 
 .header h1 {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
   color: var(--color-accent);
@@ -66,22 +73,19 @@ body {
 
 .counter-label {
   font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
   color: var(--color-muted);
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
 }
 
 .counter-badge {
   background-color: var(--color-accent);
   color: #fff;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   padding: 3px 14px;
   border-radius: 999px;
-  min-width: 34px;
-  text-align: center;
+  width: 34px;
   transition: transform 0.2s;
 }
 
@@ -101,20 +105,16 @@ body {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   color: var(--color-text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 0.95rem;
   padding: 0 1rem;
   height: 46px;
-  outline: none;
   transition: border-color 0.2s;
-}
-
-.input-row input::placeholder {
-  color: var(--color-muted);
 }
 
 .input-row input:focus {
   border-color: var(--color-accent);
+  outline: none;
 }
 
 .input-row input.error {
@@ -129,10 +129,9 @@ body {
   border: none;
   background-color: var(--color-accent);
   color: #fff;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
-  cursor: pointer;
   transition: opacity 0.15s, transform 0.15s;
 }
 
@@ -143,7 +142,7 @@ body {
   font-size: 0.82rem;
   color: var(--color-danger);
   margin: -1rem 0 1rem;
-  min-height: 1rem;
+  height: 1rem;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -157,6 +156,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 0;
 }
 
 .tarea-item {
@@ -182,8 +182,6 @@ body {
   border-radius: 50%;
   border: 2px solid var(--color-accent);
   background-color: transparent;
-  cursor: pointer;
-  flex-shrink: 0;
   position: relative;
   transition: background-color 0.2s, border-color 0.2s;
 }
@@ -196,7 +194,10 @@ body {
 .tarea-item.completada .btn-check::after {
   content: '✓';
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   font-size: 12px;
   color: #fff;
   font-weight: 700;
@@ -208,7 +209,6 @@ body {
 .tarea-texto {
   flex: 1;
   font-size: 0.95rem;
-  word-break: break-word;
   transition: color 0.2s;
 }
 
@@ -221,15 +221,13 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: none;
   background-color: transparent;
   color: var(--color-muted);
   font-size: 1rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   transition: background-color 0.15s, color 0.15s;
 }
 
@@ -239,7 +237,6 @@ body {
 }
 
 .empty-state {
-  text-align: center;
   padding: 2rem 0 1rem;
   color: var(--color-muted);
   font-size: 0.9rem;
